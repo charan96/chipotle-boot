@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chipotle</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1>Order Details:</h1>
+
+<h3>Order ID: <span th:text="${filled_order.getId()}"/></h3><br/>
+<h3>Customer Name: <span th:text="${filled_order.getCustomerName()}"/></h3><br/>
+<h3>Ingredients: <br/>
+    <tr th:each="ingredient: ${filled_order.getIngredients()}">
+        <span th:text="${ingredient.getName()}"/><br/>
+    </tr>
+</h3>
+<br/>
+<h3>Order Total: <span th:text="${filled_order.getTotal()}"/></h3><br/>
+
+</body>
+</html>
